@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Sistema_gestion_citas_medicas.Repositorios
 {
-    public class EspecialidadRepository : IEspecialidadRepository
+    public class EspecialidadRepository : ICrud<Especialidad>
     {
         private readonly AppDbContext _context;
 

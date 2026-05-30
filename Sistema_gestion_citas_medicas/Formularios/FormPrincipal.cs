@@ -19,6 +19,7 @@ namespace Sistema_gestion_citas_medicas
             _especialidadService = especialidadService;
             _citaService = citaService;
             _recordatorioService = recordatorioService;
+            AbrirFormulario(new Formularios.FormCitas(_citaService, _pacienteService, _medicoService, _recordatorioService));
         }
 
         private void pacientesToolStripMenuItem_Click(object sender, EventArgs e)

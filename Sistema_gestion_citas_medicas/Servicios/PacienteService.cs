@@ -5,9 +5,9 @@ namespace Sistema_gestion_citas_medicas.Services
 {
     public class PacienteService
     {
-        private readonly IPacienteRepository _repo;
+        private readonly ICrud<Paciente> _repo;
 
-        public PacienteService(IPacienteRepository repo)
+        public PacienteService(ICrud<Paciente> repo)
             => _repo = repo;
 
         public List<Paciente> ObtenerTodos()

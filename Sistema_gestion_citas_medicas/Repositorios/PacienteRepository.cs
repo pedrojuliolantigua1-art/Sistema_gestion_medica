@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Sistema_gestion_citas_medicas.Repositorios
 {
-    public class PacienteRepository : IPacienteRepository
+    public class PacienteRepository : ICrud<Paciente>
     {
         private readonly AppDbContext _context;
 
@@ -30,7 +30,6 @@ namespace Sistema_gestion_citas_medicas.Repositorios
             _context.Pacientes.Update(paciente);
             _context.SaveChanges();
         }
-
         public void Eliminar(int id)
         {
             var paciente = _context.Pacientes.Find(id);
