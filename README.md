@@ -1,4 +1,4 @@
-# Actividad: Diseno de Sistema de Gestion de Citas Medicas
+# Actividad: Diseño de Sistema de Gestion de Citas Medicas
 
 ## 1. Analisis del problema 
 
