@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Sistema_gestion_citas_medicas.Models;
-using SistemaCitas.Models;
 
 public class AppDbContext : DbContext
 {
@@ -26,8 +25,7 @@ public class AppDbContext : DbContext
             .HasValue<Paciente>("Paciente")
             .HasValue<Medico>("Medico");
 
-        modelBuilder.Entity<People>()
-            .Ignore(p => p.cedula);
+        modelBuilder.Entity<People>();
 
         modelBuilder.Entity<Cita>()
             .Property(c => c.Estado)

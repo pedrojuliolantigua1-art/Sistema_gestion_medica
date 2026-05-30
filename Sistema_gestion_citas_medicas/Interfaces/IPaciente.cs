@@ -2,5 +2,5 @@
 
 namespace Sistema_gestion_citas_medicas.Interfaces
 {
-    public interface IPaciente : ICrud<Paciente> { }
+    public interface IPacienteRepository : ICrud<Paciente> { }
 }

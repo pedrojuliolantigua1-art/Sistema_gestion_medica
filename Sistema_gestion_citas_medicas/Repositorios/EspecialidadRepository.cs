@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Sistema_gestion_citas_medicas.Repositorios
 {
-    public class EspecialidadRepository : IEspecialidad
+    public class EspecialidadRepository : IEspecialidadRepository
     {
         private readonly AppDbContext _context;
 

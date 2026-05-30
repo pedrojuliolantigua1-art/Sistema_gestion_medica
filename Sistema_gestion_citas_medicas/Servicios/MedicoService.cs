@@ -18,11 +18,7 @@ namespace Sistema_gestion_citas_medicas.Services
 
         public void Registrar(Medico medico)
         {
-            if (string.IsNullOrWhiteSpace(medico.Nombre))
-                throw new Exception("El nombre es obligatorio.");
-
-            if (string.IsNullOrWhiteSpace(medico.Apellido))
-                throw new Exception("El apellido es obligatorio.");
+            medico.ValidarDatosBasicos();
 
             if (medico.EspecialidadId == 0)
                 throw new Exception("Debe seleccionar una especialidad.");
@@ -32,8 +28,7 @@ namespace Sistema_gestion_citas_medicas.Services
 
         public void Actualizar(Medico medico)
         {
-            if (string.IsNullOrWhiteSpace(medico.Nombre))
-                throw new Exception("El nombre es obligatorio.");
+            medico.ValidarDatosBasicos();
 
             if (medico.EspecialidadId == 0)
                 throw new Exception("Debe seleccionar una especialidad.");

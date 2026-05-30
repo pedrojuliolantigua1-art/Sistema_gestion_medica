@@ -8,11 +8,10 @@ namespace Sistema_gestion_citas_medicas.Formularios
     {
         private readonly PacienteService _pacienteService;
 
-        public FormPacientes()
+        public FormPacientes(PacienteService pacienteService)
         {
             InitializeComponent();
-            var context = new AppDbContext();
-            _pacienteService = new PacienteService(new PacienteRepository(context));
+            _pacienteService = pacienteService;
         }
 
         private void FormPacientes_Load(object sender, EventArgs e)
@@ -26,7 +25,7 @@ namespace Sistema_gestion_citas_medicas.Formularios
             {
                 var paciente = new Paciente
                 {
-                    cedula = txtCedula.Text.Trim(),
+                    Cedula = txtCedula.Text.Trim(),
                     Nombre = txtNombre.Text.Trim(),
                     Apellido = txtApellido.Text.Trim(),
                     Email = txtEmail.Text.Trim(),
@@ -51,7 +50,7 @@ namespace Sistema_gestion_citas_medicas.Formularios
                 .Select(p => new
                 {
                     p.Id,
-                    Cedula = p.cedula,
+                    Cedula = p.Cedula,
                     p.Nombre,
                     p.Apellido,
                     p.Email,

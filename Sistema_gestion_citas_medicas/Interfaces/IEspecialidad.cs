@@ -2,7 +2,7 @@
 
 namespace Sistema_gestion_citas_medicas.Interfaces
 {
-    public interface IEspecialidad : ICrud<Especialidad> 
+    public interface IEspecialidadRepository : ICrud<Especialidad>
     {
 
     }

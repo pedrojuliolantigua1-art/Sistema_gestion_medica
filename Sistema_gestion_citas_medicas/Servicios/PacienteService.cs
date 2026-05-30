@@ -5,9 +5,9 @@ namespace Sistema_gestion_citas_medicas.Services
 {
     public class PacienteService
     {
-        private readonly IPaciente _repo;
+        private readonly IPacienteRepository _repo;
 
-        public PacienteService(IPaciente repo)
+        public PacienteService(IPacienteRepository repo)
             => _repo = repo;
 
         public List<Paciente> ObtenerTodos()
@@ -15,25 +15,13 @@ namespace Sistema_gestion_citas_medicas.Services
 
         public void Registrar(Paciente paciente)
         {
-            if (string.IsNullOrWhiteSpace(paciente.Nombre))
-                throw new Exception("El nombre es obligatorio.");
-
-            if (string.IsNullOrWhiteSpace(paciente.Apellido))
-                throw new Exception("El apellido es obligatorio.");
-
-            if (string.IsNullOrWhiteSpace(paciente.Email))
-                throw new Exception("El email es obligatorio.");
-
+            paciente.ValidarDatosBasicos();
             _repo.Agregar(paciente);
         }
 
         public void Actualizar(Paciente paciente)
         {
-            if (string.IsNullOrWhiteSpace(paciente.Nombre))
-                throw new Exception("El nombre es obligatorio.");
-
-            if (string.IsNullOrWhiteSpace(paciente.Apellido))
-                throw new Exception("El apellido es obligatorio.");
+            paciente.ValidarDatosBasicos();
 
             _repo.Actualizar(paciente);
         }

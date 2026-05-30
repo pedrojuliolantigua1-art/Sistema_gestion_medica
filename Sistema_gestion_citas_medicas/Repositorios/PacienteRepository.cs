@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Sistema_gestion_citas_medicas.Repositorios
 {
-    public class PacienteRepository : IPaciente
+    public class PacienteRepository : IPacienteRepository
     {
         private readonly AppDbContext _context;
 
@@ -40,5 +40,5 @@ namespace Sistema_gestion_citas_medicas.Repositorios
                 _context.SaveChanges();
             }
         }
-    }   
+    }
 }

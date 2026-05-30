@@ -1,6 +1,7 @@
 using Sistema_gestion_citas_medicas.Repositorios;
 using Sistema_gestion_citas_medicas.Services;
-using SistemaCitas.Models;
+using Sistema_gestion_citas_medicas.Models;
+using Sistema_gestion_citas_medicas.Servicios;
 
 namespace Sistema_gestion_citas_medicas.Formularios
 {
@@ -9,14 +10,16 @@ namespace Sistema_gestion_citas_medicas.Formularios
         private readonly CitaService _citaService;
         private readonly PacienteService _pacienteService;
         private readonly MedicoService _medicoService;
+        private readonly RecordatorioService _recordatorioService;
 
-        public FormCitas()
+        public FormCitas(CitaService citaService, PacienteService pacienteService, MedicoService medicoService, RecordatorioService recordatorioService)
         {
             InitializeComponent();
-            var context = new AppDbContext();
-            _citaService = new CitaService(new CitaRepository(context));
-            _pacienteService = new PacienteService(new PacienteRepository(context));
-            _medicoService = new MedicoService(new MedicoRepository(context));
+            _citaService = citaService;
+            _pacienteService = pacienteService;
+            _medicoService = medicoService;
+            _recordatorioService = recordatorioService;
+
         }
 
         private void FormCitas_Load(object sender, EventArgs e)
@@ -125,6 +128,23 @@ namespace Sistema_gestion_citas_medicas.Formularios
         {
             txtMotivo.Clear();
             dtpFechaHora.Value = DateTime.Now;
+        }
+
+        private void btnRecordatorio_Click_1(object sender, EventArgs e)
+        {
+            var citaId = ObtenerCitaSeleccionada();
+            if (citaId == 0)
+                return;
+
+            try
+            {
+                _recordatorioService.EnviarRecordatorio(citaId);
+                MessageBox.Show("Recordatorio enviado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

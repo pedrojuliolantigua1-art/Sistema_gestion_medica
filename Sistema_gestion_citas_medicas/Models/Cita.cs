@@ -1,6 +1,6 @@
 ﻿using Sistema_gestion_citas_medicas.Models;
 
-namespace SistemaCitas.Models
+namespace Sistema_gestion_citas_medicas.Models
 {
     public enum EstadoCita
     {

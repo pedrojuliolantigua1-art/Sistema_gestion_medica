@@ -8,11 +8,10 @@ namespace Sistema_gestion_citas_medicas.Formularios
     {
         private readonly EspecialidadService _especialidadService;
 
-        public FormEspecialidades()
+        public FormEspecialidades(EspecialidadService especialidadService)
         {
             InitializeComponent();
-            var context = new AppDbContext();
-            _especialidadService = new EspecialidadService(new EspecialidadRepository(context));
+            _especialidadService = especialidadService;
         }
 
         private void FormEspecialidades_Load(object sender, EventArgs e)

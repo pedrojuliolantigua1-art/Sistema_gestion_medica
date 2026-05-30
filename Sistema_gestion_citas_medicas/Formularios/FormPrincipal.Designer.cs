@@ -9,7 +9,6 @@ namespace Sistema_gestion_citas_medicas
         private ToolStripMenuItem medicosToolStripMenuItem;
         private ToolStripMenuItem especialidadesToolStripMenuItem;
         private ToolStripMenuItem citasToolStripMenuItem;
-        private Label lblTitulo;
 
         protected override void Dispose(bool disposing)
         {
@@ -28,7 +27,6 @@ namespace Sistema_gestion_citas_medicas
             medicosToolStripMenuItem = new ToolStripMenuItem();
             especialidadesToolStripMenuItem = new ToolStripMenuItem();
             citasToolStripMenuItem = new ToolStripMenuItem();
-            lblTitulo = new Label();
             menuStripPrincipal.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,40 +50,30 @@ namespace Sistema_gestion_citas_medicas
             // pacientesToolStripMenuItem
             // 
             pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
-            pacientesToolStripMenuItem.Size = new Size(224, 26);
+            pacientesToolStripMenuItem.Size = new Size(190, 26);
             pacientesToolStripMenuItem.Text = "Pacientes";
             pacientesToolStripMenuItem.Click += pacientesToolStripMenuItem_Click;
             // 
             // medicosToolStripMenuItem
             // 
             medicosToolStripMenuItem.Name = "medicosToolStripMenuItem";
-            medicosToolStripMenuItem.Size = new Size(224, 26);
+            medicosToolStripMenuItem.Size = new Size(190, 26);
             medicosToolStripMenuItem.Text = "Medicos";
             medicosToolStripMenuItem.Click += medicosToolStripMenuItem_Click;
             // 
             // especialidadesToolStripMenuItem
             // 
             especialidadesToolStripMenuItem.Name = "especialidadesToolStripMenuItem";
-            especialidadesToolStripMenuItem.Size = new Size(224, 26);
+            especialidadesToolStripMenuItem.Size = new Size(190, 26);
             especialidadesToolStripMenuItem.Text = "Especialidades";
             especialidadesToolStripMenuItem.Click += especialidadesToolStripMenuItem_Click;
             // 
             // citasToolStripMenuItem
             // 
             citasToolStripMenuItem.Name = "citasToolStripMenuItem";
-            citasToolStripMenuItem.Size = new Size(224, 26);
+            citasToolStripMenuItem.Size = new Size(190, 26);
             citasToolStripMenuItem.Text = "Citas";
             citasToolStripMenuItem.Click += citasToolStripMenuItem_Click;
-            // 
-            // lblTitulo
-            // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblTitulo.Location = new Point(35, 70);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(379, 37);
-            lblTitulo.TabIndex = 1;
-            lblTitulo.Text = "Sistema de citas medicas";
             // 
             // FormPrincipal
             // 
@@ -93,8 +81,8 @@ namespace Sistema_gestion_citas_medicas
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
             ClientSize = new Size(760, 430);
-            Controls.Add(lblTitulo);
             Controls.Add(menuStripPrincipal);
+            IsMdiContainer = true;
             MainMenuStrip = menuStripPrincipal;
             Name = "FormPrincipal";
             Text = "Sistema de citas medicas";

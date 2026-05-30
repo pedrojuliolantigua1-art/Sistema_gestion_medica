@@ -1,4 +1,4 @@
-﻿namespace SistemaCitas.Models
+﻿namespace Sistema_gestion_citas_medicas.Models
 {
     public enum TipoRecordatorio
     {

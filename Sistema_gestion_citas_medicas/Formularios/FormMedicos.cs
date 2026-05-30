@@ -9,12 +9,11 @@ namespace Sistema_gestion_citas_medicas.Formularios
         private readonly MedicoService _medicoService;
         private readonly EspecialidadService _especialidadService;
 
-        public FormMedicos()
+        public FormMedicos(MedicoService medicoService, EspecialidadService especialidadService)
         {
             InitializeComponent();
-            var context = new AppDbContext();
-            _medicoService = new MedicoService(new MedicoRepository(context));
-            _especialidadService = new EspecialidadService(new EspecialidadRepository(context));
+            _especialidadService = especialidadService;
+            _medicoService = medicoService;
         }
 
         private void FormMedicos_Load(object sender, EventArgs e)
@@ -29,7 +28,7 @@ namespace Sistema_gestion_citas_medicas.Formularios
             {
                 var medico = new Medico
                 {
-                    cedula = txtCedula.Text.Trim(),
+                    Cedula = txtCedula.Text.Trim(),
                     Nombre = txtNombre.Text.Trim(),
                     Apellido = txtApellido.Text.Trim(),
                     Email = txtEmail.Text.Trim(),
@@ -61,7 +60,7 @@ namespace Sistema_gestion_citas_medicas.Formularios
                 .Select(m => new
                 {
                     m.Id,
-                    Cedula = m.cedula,
+                    Cedula = m.Cedula,
                     m.Nombre,
                     m.Apellido,
                     m.Email,

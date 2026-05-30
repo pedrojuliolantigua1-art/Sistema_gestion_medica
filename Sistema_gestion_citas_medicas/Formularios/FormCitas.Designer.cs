@@ -41,6 +41,7 @@ namespace Sistema_gestion_citas_medicas.Formularios
             btnCancelar = new Button();
             btnReprogramar = new Button();
             dgvCitas = new DataGridView();
+            btnRecordatorio = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCitas).BeginInit();
             SuspendLayout();
             // 
@@ -165,12 +166,23 @@ namespace Sistema_gestion_citas_medicas.Formularios
             dgvCitas.Size = new Size(820, 260);
             dgvCitas.TabIndex = 0;
             // 
+            // btnRecordatorio
+            // 
+            btnRecordatorio.Location = new Point(481, 235);
+            btnRecordatorio.Name = "btnRecordatorio";
+            btnRecordatorio.Size = new Size(145, 38);
+            btnRecordatorio.TabIndex = 13;
+            btnRecordatorio.Text = "Enviar recordatorio";
+            btnRecordatorio.UseVisualStyleBackColor = true;
+            btnRecordatorio.Click += btnRecordatorio_Click_1;
+            // 
             // FormCitas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
             ClientSize = new Size(900, 600);
+            Controls.Add(btnRecordatorio);
             Controls.Add(dgvCitas);
             Controls.Add(btnReprogramar);
             Controls.Add(btnCancelar);
@@ -191,5 +203,7 @@ namespace Sistema_gestion_citas_medicas.Formularios
             ResumeLayout(false);
             PerformLayout();
         }
+
+        private Button btnRecordatorio;
     }
 }

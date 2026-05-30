@@ -5,9 +5,9 @@ namespace Sistema_gestion_citas_medicas.Services
 {
     public class EspecialidadService
     {
-        private readonly IEspecialidad _repo;
+        private readonly IEspecialidadRepository _repo;
 
-        public EspecialidadService(IEspecialidad repo)
+        public EspecialidadService(IEspecialidadRepository repo)
             => _repo = repo;
 
         public List<Especialidad> ObtenerTodas()
