@@ -66,9 +66,9 @@ Estas funcionalidades no se implementan en esta primera version porque no fueron
 | `People` | `Id`, `Cedula`, `Nombre`, `Apellido`, `Telefono`, `Email` | `ValidarDatosBasicos()` | Contiene datos comunes de pacientes y medicos. |
 | `Paciente` | `FechaNacimiento` | Hereda validacion de `People` | Representa a un paciente de la clinica. |
 | `Medico` | `EspecialidadId`, `Especialidad` | Hereda validacion de `People` | Representa a un medico y su especialidad. |
-| `Especialidad` | `Id`, `Nombre`, `Descripcion` | No tiene metodos de negocio propios | Representa una especialidad medica. |
-| `Cita` | `PacienteId`, `MedicoId`, `FechaHora`, `Estado`, `Motivo` | No tiene metodos de negocio propios | Representa una cita medica. |
-| `Recordatorio` | `CitaId`, `Tipo`, `Estado`, `EnviadoEn` | No tiene metodos de negocio propios | Representa un recordatorio de cita. |
+| `Especialidad` | `Id`, `Nombre`, `Descripcion` | No tiene metodos propios de negocio | Representa una especialidad medica. |
+| `Cita` | `PacienteId`, `MedicoId`, `FechaHora`, `Estado`, `Motivo` | No tiene metodos propios de negocio | Representa una cita medica. |
+| `Recordatorio` | `CitaId`, `Tipo`, `Estado`, `EnviadoEn` | No tiene metodos propios de negocios | Representa un recordatorio de cita. |
 | `PacienteService` | Repositorio de pacientes | `Registrar()`, `Actualizar()`, `Eliminar()`, `ObtenerTodos()` | Maneja reglas de negocio de pacientes. |
 | `MedicoService` | Repositorio de medicos | `Registrar()`, `Actualizar()`, `Eliminar()`, `ObtenerTodos()` | Maneja reglas de negocio de medicos. |
 | `EspecialidadService` | Repositorio de especialidades | `Registrar()`, `Actualizar()`, `Eliminar()`, `ObtenerTodas()` | Maneja reglas de negocio de especialidades. |
